@@ -7,7 +7,7 @@ int return_eight()
     return 8;
 }
 
-int main()
+int t1()
 {
     // future from a packaged_task
     std::packaged_task<int()> task([] { return 7; }); // wrap the function
@@ -29,4 +29,28 @@ int main()
     std::cout << "Done!\nResults are: "
         << f1.get() << ' ' << f2.get() << ' ' << f3.get() << '\n';
     t.join();
+
+    return 0;
+}
+
+int t2()
+{
+    // future from an async()
+    std::future<int> f2 = std::async(std::launch::async, return_eight);
+
+    std::cout << "f2.valid(): " << f2.valid() << "\n";
+    f2.wait();
+    std::cout << "f2.valid(): " << f2.valid() << "\n";
+    std::cout 
+        << "Results are: "
+        << f2.get() 
+        << '\n';
+    std::cout << "f2.valid(): " << f2.valid() << "\n";
+
+    return 0;
+}
+
+int main()
+{
+    t2();
 }
