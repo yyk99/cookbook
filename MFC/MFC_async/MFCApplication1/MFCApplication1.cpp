@@ -9,6 +9,7 @@
 #include "MFCApplication1.h"
 #include "MainFrm.h"
 
+#include "StartProcessDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -18,7 +19,8 @@
 // CMFCApplication1App
 
 BEGIN_MESSAGE_MAP(CMFCApplication1App, CWinApp)
-	ON_COMMAND(ID_APP_ABOUT, &CMFCApplication1App::OnAppAbout)
+    ON_COMMAND(ID_APP_ABOUT, &CMFCApplication1App::OnAppAbout)
+    ON_COMMAND(ID_FILE_STARTPROCESS, &CMFCApplication1App::OnAppStartProcess)
 END_MESSAGE_MAP()
 
 
@@ -159,6 +161,12 @@ void CMFCApplication1App::OnAppAbout()
 {
 	CAboutDlg aboutDlg;
 	aboutDlg.DoModal();
+}
+
+void CMFCApplication1App::OnAppStartProcess()
+{
+    StartProcessDialog spDialog;
+    spDialog.DoModal();
 }
 
 // CMFCApplication1App message handlers
