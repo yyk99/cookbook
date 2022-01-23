@@ -26,6 +26,7 @@ add_executable(double_points
   double_points.yy
   ${FLEX_scanner_OUTPUTS}
   ${BISON_parser_OUTPUTS}
+  simple.test
   )
 
 configure_file(simple.test simple.test)

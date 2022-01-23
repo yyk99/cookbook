@@ -66,13 +66,16 @@
 }
 %%
 result:
-  list  { std::cout << $1 << '\n'; }
+  list  { std::cout << *$1 << '\n'; }
 ;
 
-%nterm <std::vector<std::string>> list;
+%nterm <std::vector<std::string> *> list;
 list:
-  %empty     { /* Generates an empty string list */ }
-| list item  { $$ = $1; $$.push_back ($2); }
+  %empty        { 
+                    /* Generates an empty string list */ 
+                    $$ = new std::vector<std::string>();
+                }
+| list item  { $$ = $1; $$->push_back ($2); }
 ;
 
 %nterm <std::string> item;
