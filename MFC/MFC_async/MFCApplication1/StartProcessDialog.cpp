@@ -14,7 +14,7 @@ IMPLEMENT_DYNAMIC(StartProcessDialog, CDialogEx)
 StartProcessDialog::StartProcessDialog(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_START_PROCESS, pParent)
 {
-    m_progress_caption.SetW
+    m_progress_caption.SetWindowTextW(L"TODO: Some text...");
 }
 
 StartProcessDialog::~StartProcessDialog()
