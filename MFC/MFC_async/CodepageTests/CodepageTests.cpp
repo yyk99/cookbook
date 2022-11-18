@@ -99,3 +99,32 @@ TEST(CodepageF, t4)
     //std::wcout << "s.size():" << s.size() << std::endl;
     //std::wcout << "s:" << s << std::endl;
 }
+
+/**
+ * @brief 
+ * @param  
+ * @param  
+*/
+TEST(CodepageF, t5)
+{
+    int a = 1, b = 1;
+
+    if (a > b) {
+        ;
+    } else {
+        ;
+    }
+
+    switch (a) {
+    case 1:
+        break;
+    case 2:
+        break;
+    default:
+        ;
+    }
+
+    for (int i = 0; i < a; ++i) {
+        ;
+    }
+}

@@ -5,7 +5,7 @@ root = true
 
 # Visual C++ Code Style settings
 
-cpp_generate_documentation_comments = xml
+cpp_generate_documentation_comments = doxygen_slash_star
 
 # Visual C++ Formatting settings
 
@@ -31,7 +31,7 @@ cpp_new_line_scope_braces_on_separate_lines = false
 cpp_new_line_close_brace_same_line_empty_type = false
 cpp_new_line_close_brace_same_line_empty_function = false
 cpp_new_line_before_catch = true
-cpp_new_line_before_else = true
+cpp_new_line_before_else = false
 cpp_new_line_before_while_in_do_while = false
 cpp_space_before_function_open_parenthesis = remove
 cpp_space_within_parameter_list_parentheses = false
