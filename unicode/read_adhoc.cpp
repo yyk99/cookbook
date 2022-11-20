@@ -71,7 +71,7 @@ int main(int argc, char** argv)
     if ( argc < 2 )
         usage();
     {
-        std::wifstream fin(argv[1]);
+        std::wifstream fin(argv[1], std::ios::binary);
         assert(fin.good() && "Cannot open file...");
 
         // fin.imbue(std::locale(fin.getloc(), new std::codecvt_utf16<wchar_t, 0x10ffff, std::consume_header>));
@@ -82,7 +82,7 @@ int main(int argc, char** argv)
         std::cout << '\n';
     }
     {
-        std::wifstream fin(argv[1]);
+        std::wifstream fin(argv[1], std::ios::binary);
 
         assert(fin.good() && "Cannot open file...");
 
