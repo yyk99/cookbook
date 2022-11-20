@@ -32,5 +32,10 @@ add_executable(locale
 	${TEST_FILES_TXT}
 	)
 
+add_executable(read_adhoc 
+	read_adhoc.cpp
+	${TEST_FILES_TXT}
+	)
+
 # end of file
 
