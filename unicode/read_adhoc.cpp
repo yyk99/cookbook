@@ -83,13 +83,10 @@ int main(int argc, char** argv)
     }
     {
         std::wifstream fin(argv[1], std::ios::binary);
-
         assert(fin.good() && "Cannot open file...");
-
         fin.imbue(std::locale(fin.getloc(), new std::codecvt_utf16<wchar_t, 0x10ffff, std::consume_header>));
-
-        unicodebuf   sbuf(fin.rdbuf());
-        std::istream  in(&sbuf);
+        unicodebuf sbuf(fin.rdbuf());
+        std::istream in(&sbuf);
 
         for ( char ch; in.get(ch); )
         {
