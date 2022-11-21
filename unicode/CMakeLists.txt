@@ -11,7 +11,8 @@ set (TEST_FILES_TXT
 	text-LE.txt
 	yyk-BE.txt
 	yyk-LE.txt
-	yyk-UTF8.txt
+  yyk-UTF8.txt
+	yyk-UTF8-BOM.txt
 	yyk-cp1251.txt
 )
 
