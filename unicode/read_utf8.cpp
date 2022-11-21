@@ -3,10 +3,13 @@
 //
 
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <fstream>
 #include <codecvt>
 
+// Based on
+// https://stackoverflow.com/questions/4775437/read-unicode-utf-8-file-into-wstring
 std::wstring readFile(const char* filename)
 {
     std::wifstream wif(filename);
@@ -27,7 +30,7 @@ int main(int argc, char** argv)
 
             for (wchar_t c : s)
             {
-                std::cout << std::hex << (unsigned int)c << ' ';
+                std::cout << std::hex << std::setw(4) << std::setfill('0') << (unsigned int)c << ' ';
             }
             std::cout << '\n';
         }
