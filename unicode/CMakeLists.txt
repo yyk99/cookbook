@@ -37,5 +37,10 @@ add_executable(read_adhoc
 	${TEST_FILES_TXT}
 	)
 
+add_executable(read_utf8
+	read_utf8.cpp
+	${TEST_FILES_TXT}
+	)
+
 # end of file
 
