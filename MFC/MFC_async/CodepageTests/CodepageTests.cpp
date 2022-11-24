@@ -65,3 +65,66 @@ TEST(CodepageF, t3)
         fclose(fp);
     }
 }
+
+TEST(CodepageF, t4)
+{
+    {
+        uint8_t s[] = u8"1234567";
+        printf("sizeof(s) = %d\n", (int)sizeof(s));
+        printf("strlen(s) = %d\n", (int)strlen((const char*)s));
+        for (auto c : s)
+            printf("\\x%02x", c & 255);
+        printf("\n");
+    }
+    {
+        char s[] = u8"Пассатижи";
+        printf("sizeof(s) = %d\n", (int)sizeof(s));
+        printf("strlen(s) = %d\n", (int)strlen((const char*)s));
+        for (auto c : s)
+            printf("\\x%02x", c & 255);
+        printf("\n");
+        FILE* f = fopen("t4.txt", "wb");
+        ASSERT_NE(nullptr, f);
+        fputs((const char*)s, f);
+        fclose(f);
+    }
+    {
+        uint8_t s[] = "Пассатижи";
+        printf("strlen(s) = %d\n", (int)strlen((const char*)s));
+        for (auto c : s)
+            printf("\\x%02x", c & 255);
+        printf("\n");
+    }
+    //std::wcout << "sizeof(s[0]):" << sizeof(s[0]) << std::endl;
+    //std::wcout << "s.size():" << s.size() << std::endl;
+    //std::wcout << "s:" << s << std::endl;
+}
+
+/**
+ * @brief 
+ * @param  
+ * @param  
+*/
+TEST(CodepageF, t5)
+{
+    int a = 1, b = 1;
+
+    if (a > b) {
+        ;
+    } else {
+        ;
+    }
+
+    switch (a) {
+    case 1:
+        break;
+    case 2:
+        break;
+    default:
+        ;
+    }
+
+    for (int i = 0; i < a; ++i) {
+        ;
+    }
+}
