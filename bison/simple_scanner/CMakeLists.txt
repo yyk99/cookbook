@@ -37,6 +37,8 @@ add_executable(scanner_app
     ${BISON_parser_OUTPUTS}
 )
 
-target_link_libraries(scanner_app
-	PRIVATE Reflex::ReflexLibStatic
+if (REFLEX_FOUND)
+    target_link_libraries(scanner_app
+	    PRIVATE Reflex::ReflexLibStatic
 	)
+endif()

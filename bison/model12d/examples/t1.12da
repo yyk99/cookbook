@@ -1,0 +1,53 @@
+null -999
+
+//
+//
+//
+
+model "Master RHR D L12 DRN culvert Rail Rev1a"
+string super {
+  name      "L12037"
+  chainage  0
+  breakline line
+  colour    cyan
+  style     "1"
+
+  attributes {
+  }
+
+  attributes {
+    text    "name"   "L12037"
+    integer "num barrels"   4
+    text    "profile"   "68 x 13"
+    real    "wall thickness"   2
+    real    "barrel length"   17
+    text    "comment"   ""
+    real    "chainage"   271646
+    real    "diameter"   0.9
+    real    "diameter mm"   900
+    real    "skew"   105.81
+  }
+  
+  attributes {
+    real    "x"   763966.83957973
+    real    "y"   7528203.71605036
+    real    "angle"   5.92906229
+    group {
+      name "RHR D L12 PLF TOF BLAST INT Rev1a.mtf"
+      attributes {
+      }
+    }
+  }
+  
+  time_created "09-Apr-2014 23:22:26"
+  time_updated "09-Apr-2014 23:22:26"
+  closed 0
+  data_3d {
+    763971.30487584 7528210.49924415 451.088
+    763961.49787702 7528197.04824576 450.917
+  }
+  pipe_value {
+    diameter  0.9
+  }
+  justify bottom
+}
