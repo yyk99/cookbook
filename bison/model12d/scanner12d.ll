@@ -3,7 +3,11 @@
 %option c++ noyywrap
 
 %{
+
+//#include "parser12d.hpp"
+
 int mylineno = 0;
+
 %}
 
 string	\"[^\n"]+\"

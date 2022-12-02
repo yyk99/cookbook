@@ -16,19 +16,19 @@ BISON_TARGET(parser12d
     COMPILE_FLAGS "-t -v"
 )
 
-set(FLEX_FLAGS "--flex")
+set(FLEX_FLAGS "-L")
 
-FLEX_TARGET(parser12d
+FLEX_TARGET(scanner12d
     scanner12d.ll
     scanner12d.cpp
     COMPILE_FLAGS "${FLEX_FLAGS}"
     DEFINES_FILE "scanner12d.h"
     )
-#ADD_FLEX_BISON_DEPENDENCY(lexer parser)
+ADD_FLEX_BISON_DEPENDENCY(scanner12d parser12d)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 
-message(STATUS "lexer: ${FLEX_parser12d_OUTPUTS}")
+message(STATUS "lexer: ${FLEX_scanner12d_OUTPUTS}")
 message(STATUS "BISON_VERSION=${BISON_VERSION}")
 message(STATUS "parser: ${BISON_parser12d_OUTPUTS}")
 
@@ -37,7 +37,7 @@ add_executable(model12d
     driver12d.h
     parser12d.yy
     scanner12d.ll
-    ${FLEX_parser12d_OUTPUTS}
+    ${FLEX_scanner12d_OUTPUTS}
     ${BISON_parser12d_OUTPUTS}
 )
 
